@@ -16,6 +16,10 @@ if [ -z $(grep /private/etc/pf.conf "rdr-anchor \"org.user.forwarding\"") ]; the
     cat pf.rules.conf >> /private/etc/pf.conf
 fi
 
+# proxy.pac to allow automatic configuration on Apple devices
+mkdir -p /usr/local/socks5/
+cp proxy.pac /usr/local/socks5/
+
 # Copy over the launchers
 sudo cp *.plist /Library/LaunchDaemons/
 
