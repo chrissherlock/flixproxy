@@ -13,12 +13,15 @@ sudo cp org.user.socks5 /private/etc/pf.anchors/
 
 # check to see if the pf.conf file has already been configured
 if [ -z $(grep /private/etc/pf.conf "rdr-anchor \"org.user.forwarding\"") ]; then
-    cat pf.rules.conf >> /private/etc/pf.conf
+    sudo cat pf.rules.conf >> /private/etc/pf.conf
 fi
 
+sudo mkdir -p /usr/local/bin/
+sudo cp fwd-pf.sh /usr/local/bin/
+
 # proxy.pac to allow automatic configuration on Apple devices
-mkdir -p /usr/local/socks5/
-cp proxy.pac /usr/local/socks5/
+sudo mkdir -p /usr/local/socks5/
+sudo cp proxy.pac /usr/local/socks5/
 
 # Copy over the launchers
 sudo cp *.plist /Library/LaunchDaemons/
