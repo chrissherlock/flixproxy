@@ -1,0 +1,2 @@
+GETFLIXDNS = "54.252.183.4"
+rdr pass inet proto tcp from any to any port 53 -> $GETFLIXDNS port 53

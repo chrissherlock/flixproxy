@@ -1,0 +1,2 @@
+pass in proto tcp from any to any port 8081
+pass in proto tcp from any to any port 8080
