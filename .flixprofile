@@ -1,0 +1,8 @@
+chrome() {
+    app="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    TZ="America/New_York"
+    (
+     "${app}" --no-default-browser-check --user-data-dir=/tmp/junk > /dev/null 2>&1;
+     # rm -r /tmp/junk
+    ) &
+}
